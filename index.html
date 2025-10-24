@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRC Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CRC Visualizer</h1>
+
+        <div class="input-section">
+            <label>Binary Message:</label>
+            <input type="text" id="message" placeholder="e.g. 11010011101100">
+
+            <label>Generator Polynomial:</label>
+            <input type="text" id="generator" placeholder="e.g. 1011">
+
+            <button onclick="encodeCRC()">Encode Message</button>
+        </div>
+
+        <div class="output-section">
+            <h2>Step-by-Step Visualization</h2>
+            <pre id="visualization"></pre>
+        </div>
+
+        <div class="error-section">
+            <label>Introduce Errors (comma-separated positions, 0-indexed):</label>
+            <input type="text" id="errorPositions" placeholder="e.g. 2,5">
+            <button onclick="introduceError()">Introduce Errors</button>
+            <button onclick="checkCRC()">Check Codeword</button>
+        </div>
+
+        <div class="result-section">
+            <h2>Result</h2>
+            <p id="codewordDisplay"></p>
+            <p id="checkResult"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
